@@ -1,0 +1,36 @@
+{
+  "name": "deno-astro-template",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "deno run -A --unstable npm:astro dev",
+    "start": "deno run -A --unstable npm:astro dev",
+    "build": "astro build",
+    "preview": "deno run -A --unstable ./dist/server/entry.mjs",
+    "astro": "astro",
+    "format": "deno fmt && prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/deno": "^4.2.0",
+    "astro": "^2.8.3",
+    "deno-astro-adapter": "^4.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.11.0"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "plugins": [
+      "./node_modules/prettier-plugin-astro/dist/index.js"
+    ],
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
+    ]
+  }
+}
